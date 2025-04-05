@@ -9,8 +9,7 @@ func _physics_process(delta: float) -> void:
 	if aBodies.size() > 0 :
 		for bodyNode2D : Node2D in aBodies :
 			if bodyNode2D.is_in_group("Wall"):
-				print("touch")
-				$WallHit.Play();
+				$WallHit.play();
 	
 	move(delta)
 

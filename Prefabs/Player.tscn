@@ -121,6 +121,7 @@ softness = 1.0
 [node name="Bucket" type="RigidBody2D" parent="."]
 position = Vector2(0, 79)
 contact_monitor = true
+max_contacts_reported = 256
 script = ExtResource("1_x3d5u")
 acceleration = 15000
 
@@ -134,6 +135,8 @@ texture = ExtResource("2_b43ah")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_vxq8l")
 
-[node name="WallHit" type="AudioStreamPlayer2D" parent="."]
+[node name="WallHit" type="AudioStreamPlayer2D" parent="Bucket"]
+position = Vector2(0, -79)
 stream = ExtResource("4_shmu5")
+volume_db = 6.0
 autoplay = true
