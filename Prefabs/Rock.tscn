@@ -10,7 +10,7 @@ shader_parameter/speed = 2.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_t25bi"]
 radius = 5.0
 
-[node name="Rock" type="RigidBody2D" groups=["Rock"]]
+[node name="Rock" type="RigidBody2D" groups=["Obstacles", "Rock"]]
 mass = 0.1
 gravity_scale = 0.3
 

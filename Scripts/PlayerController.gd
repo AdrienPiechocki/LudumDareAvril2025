@@ -3,6 +3,10 @@ extends RigidBody2D
 @export var acceleration:int = 40000
 @export var axis:Vector2 = Vector2.ZERO
 @export var coins:int = 0
+
+var coin = preload("res://Prefabs/FallingCoin.tscn")
+
+var _bHaveCoin : bool = false
 var flag:bool = true
 
 func _physics_process(delta: float) -> void:
@@ -10,12 +14,15 @@ func _physics_process(delta: float) -> void:
 	
 	if aBodies.size() > 0 :
 		for bodyNode2D : Node2D in aBodies :
-			if (bodyNode2D.is_in_group("Wall") || bodyNode2D.is_in_group("Rock")) && flag:
+			if bodyNode2D.is_in_group("Obstacles") && flag:
 				cooldown()
-				coins -= 1
 				$WallHit.play()
+				
 				if bodyNode2D.is_in_group("Rock"):
 					bodyNode2D.queue_free()
+					
+				if coins > 0 :
+					losingCoin()
 	
 	move(delta)
 	
@@ -45,3 +52,11 @@ func move(delta):
 
 func addCoin():
 	coins += 1
+	_bHaveCoin = true
+
+func losingCoin():
+	var coinInstance : Node2D = coin.instantiate()
+	coinInstance.position = $Marker2D4.position
+	add_child(coinInstance)
+	coins -= 1
+	_bHaveCoin = coins <= 0

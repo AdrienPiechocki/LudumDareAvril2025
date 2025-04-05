@@ -10,7 +10,7 @@ shader_parameter/fSpeed = 0.8
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2k8g"]
 size = Vector2(16, 16)
 
-[node name="ShaderWall" type="StaticBody2D" groups=["Wall"]]
+[node name="ShaderWall" type="StaticBody2D" groups=["Obstacles", "Wall"]]
 script = ExtResource("1_l135e")
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctv4d2k5bmy6d"]
+
+[ext_resource type="Script" uid="uid://b0uig0ch4get1" path="res://Prefabs/falling_coin.gd" id="1_0gcwk"]
+[ext_resource type="Texture2D" uid="uid://cp65jl8nkif4w" path="res://Sprites/SmallCoin.png" id="2_18dlw"]
+[ext_resource type="Shader" uid="uid://c5tiwm22ug6ax" path="res://Shaders/Coin.gdshader" id="3_oq7qx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0gcwk"]
+radius = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahj5l"]
+shader = ExtResource("3_oq7qx")
+shader_parameter/Line_Smoothness = 0.045
+shader_parameter/Line_Width = 0.09
+shader_parameter/Brightness = 3.0
+shader_parameter/Rotation_deg = 30.0
+shader_parameter/Distortion = 1.8
+shader_parameter/Speed = 0.7
+shader_parameter/Position = 0.0
+shader_parameter/Position_Min = 0.25
+shader_parameter/Position_Max = 0.5
+shader_parameter/Alpha = 1.0
+
+[node name="FallingCoin" type="RigidBody2D"]
+script = ExtResource("1_0gcwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0gcwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_18dlw")
+
+[node name="ShaderLayerSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.87451, 0.454902)
+material = SubResource("ShaderMaterial_ahj5l")
+texture = ExtResource("2_18dlw")
