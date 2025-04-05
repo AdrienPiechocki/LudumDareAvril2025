@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float fSpeed = .5;
+uniform float fSpeed = 0.8;
 
 void vertex() 
 {
