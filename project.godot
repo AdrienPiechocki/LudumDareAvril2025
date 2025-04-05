@@ -25,7 +25,9 @@ window/handheld/orientation=1
 
 [global_group]
 
+Wall=""
 RopeSegment=""
+Rock=""
 
 [input]
 
