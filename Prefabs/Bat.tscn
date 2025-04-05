@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bg6km2kmf7n5i"]
 
 [ext_resource type="Texture2D" uid="uid://lody3fa5u1iq" path="res://Sprites/bat2.png" id="1_32111"]
-[ext_resource type="Script" uid="uid://ucb8ciswngmo" path="res://Scripts/bat.gd" id="1_x48wn"]
+[ext_resource type="Script" path="res://Scripts/bat.gd" id="1_x48wn"]
 [ext_resource type="Texture2D" uid="uid://dggryfuyhr1k8" path="res://Sprites/bat1.png" id="2_x48wn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6ecnw"]
@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_euh30"]
-radius = 7.0
+radius = 5.0
 
 [node name="Bat" type="CharacterBody2D" groups=["Bat"]]
 motion_mode = 1
