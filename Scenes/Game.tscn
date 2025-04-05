@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://bn2bvn7hh1ebm" path="res://Sprites/Wall.png" id="2_2irst"]
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_j5yw3"]
-[ext_resource type="Script" uid="uid://cyl674j21j5oc" path="res://Scripts/PlayerController.gd" id="3_2irst"]
+[ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="3_2irst"]
 [ext_resource type="PackedScene" uid="uid://d348dek170633" path="res://Prefabs/Rope.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_kldst"]
 [ext_resource type="Texture2D" uid="uid://ddchc2rj6ujgw" path="res://Sprites/Bucket.png" id="4_kldst"]
@@ -38,6 +38,7 @@ shape = SubResource("RectangleShape2D_2irst")
 position = Vector2(0, 10)
 node_a = NodePath("../Source")
 node_b = NodePath("../Rope")
+softness = 1.0
 
 [node name="Rope" parent="Player" instance=ExtResource("3_j5yw3")]
 position = Vector2(0, 18)
@@ -46,6 +47,7 @@ position = Vector2(0, 18)
 position = Vector2(0, 26)
 node_a = NodePath("../Rope")
 node_b = NodePath("../Rope2")
+softness = 1.0
 
 [node name="Rope2" parent="Player" instance=ExtResource("3_j5yw3")]
 position = Vector2(0, 34)
@@ -54,6 +56,7 @@ position = Vector2(0, 34)
 position = Vector2(0, 42)
 node_a = NodePath("../Rope2")
 node_b = NodePath("../Rope3")
+softness = 1.0
 
 [node name="Rope3" parent="Player" instance=ExtResource("3_j5yw3")]
 position = Vector2(0, 50)
@@ -62,12 +65,14 @@ position = Vector2(0, 50)
 position = Vector2(0, 58)
 node_a = NodePath("../Rope3")
 node_b = NodePath("../Bucket")
+softness = 1.0
 
 [node name="Bucket" type="RigidBody2D" parent="Player"]
 position = Vector2(0, 63)
 script = ExtResource("3_2irst")
 maxSpeed = 30000
 acceleration = 15000
+friction = 150
 
 [node name="BucketSprite" type="Sprite2D" parent="Player/Bucket"]
 texture = ExtResource("4_kldst")
