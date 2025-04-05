@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://5uyarsp60e52" path="res://Sprites/coin.png" id="1_bqgpa"]
 [ext_resource type="Script" uid="uid://rvypf40oawd7" path="res://Scripts/Coin.gd" id="1_kmp0c"]
-[ext_resource type="Shader" uid="uid://c5tiwm22ug6ax" path="res://Shaders/Coin.gdshader" id="2_214dt"]
+[ext_resource type="Shader" path="res://Shaders/Coin.gdshader" id="2_214dt"]
 [ext_resource type="PackedScene" uid="uid://baa3sj23mt5s5" path="res://Prefabs/Particules/CoinParticules.tscn" id="3_qxink"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bqgpa"]
