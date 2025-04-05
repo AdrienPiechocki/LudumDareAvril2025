@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=9 format=3 uid="uid://rcupgrgt5vw4"]
 
 [ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_j5yw3"]
-[ext_resource type="PackedScene" uid="uid://cr821rwur43t5" path="res://Prefabs/Rope.tscn" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://d348dek170633" path="res://Prefabs/Rope.tscn" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_kldst"]
 [ext_resource type="Texture2D" uid="uid://ddchc2rj6ujgw" path="res://Sprites/Bucket.png" id="4_kldst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2irst"]
@@ -13,17 +14,12 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kldst"]
 size = Vector2(178, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lihs"]
-size = Vector2(39, 321)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgofq"]
-size = Vector2(39, 314)
-
 [node name="Game" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 
 [node name="Player" type="Node2D" parent="."]
+position = Vector2(72, 128)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Player"]
 position = Vector2(0, -58)
@@ -69,37 +65,22 @@ texture = ExtResource("4_kldst")
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_b2bpf")
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.75, 0.75)
-
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(0, 130)
+position = Vector2(72, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("RectangleShape2D_kldst")
 
-[node name="LeftWall" type="StaticBody2D" parent="."]
-position = Vector2(-50, 0)
+[node name="LeftWall" parent="." instance=ExtResource("3_kldst")]
+rTexture = ExtResource("1_gl6un")
+iXSize = 48
+iYSize = 272
 
-[node name="LeftWallSprite" type="Sprite2D" parent="LeftWall"]
-texture_repeat = 2
-texture = ExtResource("1_gl6un")
-region_enabled = true
-region_rect = Rect2(0, 0, 48, 300)
+[node name="RightWall" parent="." instance=ExtResource("3_kldst")]
+position = Vector2(144, 0)
+rTexture = ExtResource("2_j5yw3")
+iXSize = 48
+iYSize = 272
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-5.5, 6.5)
-shape = SubResource("RectangleShape2D_7lihs")
-
-[node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(50, 0)
-
-[node name="RightWallSprite" type="Sprite2D" parent="RightWall"]
-texture_repeat = 2
-texture = ExtResource("2_j5yw3")
-region_enabled = true
-region_rect = Rect2(0, 0, 48, 300)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(5.5, 4)
-shape = SubResource("RectangleShape2D_fgofq")
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

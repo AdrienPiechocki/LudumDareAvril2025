@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm301snojvb2l"]
+[gd_scene load_steps=5 format=3 uid="uid://bm301snojvb2l"]
 
 [ext_resource type="Shader" uid="uid://u71xlwyrmxwy" path="res://Shaders/ShaderWall.gdshader" id="1_bdi57"]
-[ext_resource type="Script" uid="uid://dmlut6itye7aj" path="res://Scripts/shader_wall.gd" id="1_l135e"]
-[ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="2_j2k8g"]
+[ext_resource type="Script" uid="uid://bq5om2gm2xsm" path="res://Scripts/shader_wall.gd" id="1_l135e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2k8g"]
 shader = ExtResource("1_bdi57")
 shader_parameter/fSpeed = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j2k8g"]
+size = Vector2(16, 16)
 
 [node name="ShaderWall" type="StaticBody2D"]
 script = ExtResource("1_l135e")
@@ -26,7 +26,6 @@ offset_right = 24.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_j2k8g")
 stretch_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
