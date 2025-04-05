@@ -1,12 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=3 format=3 uid="uid://rcupgrgt5vw4"]
 
 [ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="1_ebmjs"]
+[ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_qxrlw"]
 
 [node name="Game" type="Node2D"]
 
 [node name="LeftWall" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(-24, 8)
+position = Vector2(-50, 0)
 texture = ExtResource("1_ebmjs")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 300)
+
+[node name="RightWall" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(50, 0)
+texture = ExtResource("2_qxrlw")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 300)
