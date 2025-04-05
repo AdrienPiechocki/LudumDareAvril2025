@@ -74,7 +74,6 @@ position = Vector2(0, 79)
 contact_monitor = true
 max_contacts_reported = 256
 script = ExtResource("1_x3d5u")
-acceleration = 40000
 
 [node name="Marker2D4" type="Marker2D" parent="Bucket"]
 position = Vector2(0, -4)
