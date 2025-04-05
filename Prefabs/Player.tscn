@@ -23,6 +23,8 @@ size = Vector2(16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Source"]
 shape = SubResource("RectangleShape2D_shmu5")
 
+[node name="Marker2D1" type="Marker2D" parent="."]
+
 [node name="PinJoint2D1" type="PinJoint2D" parent="."]
 position = Vector2(0, 10)
 node_a = NodePath("../Source")
@@ -32,15 +34,12 @@ softness = 1.0
 [node name="Rope1" type="RigidBody2D" parent="."]
 position = Vector2(0, 10)
 
-[node name="Marker2D1" type="Marker2D" parent="Rope1"]
-position = Vector2(0, -10)
-
 [node name="Line2D" type="Line2D" parent="Rope1" node_paths=PackedStringArray("start_point", "end_point")]
 position = Vector2(1, 0)
 width = 2.0
 default_color = Color(0.231373, 0.152941, 0.0941176, 1)
 script = ExtResource("1_b43ah")
-start_point = NodePath("../Marker2D1")
+start_point = NodePath("../../Marker2D1")
 end_point = NodePath("../../Rope2/Marker2D2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rope1"]
