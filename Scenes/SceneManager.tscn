@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://chn84iievcx4m"]
+[gd_scene load_steps=2 format=3 uid="uid://chn84iievcx4m"]
+
+[sub_resource type="Environment" id="Environment_44yko"]
+background_mode = 3
+glow_enabled = true
 
 [node name="SceneManger" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_44yko")
