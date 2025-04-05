@@ -23,6 +23,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
+[global_group]
+
+Wall=""
+
 [input]
 
 ui_left={

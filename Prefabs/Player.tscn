@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d6bmt3ndu7y0"]
+[gd_scene load_steps=8 format=3 uid="uid://d6bmt3ndu7y0"]
 
 [ext_resource type="Script" uid="uid://bqwfv14htm3fg" path="res://Scripts/Rope.gd" id="1_b43ah"]
 [ext_resource type="Script" uid="uid://cyl674j21j5oc" path="res://Scripts/PlayerController.gd" id="1_x3d5u"]
 [ext_resource type="Texture2D" uid="uid://ddchc2rj6ujgw" path="res://Sprites/Bucket.png" id="2_b43ah"]
+[ext_resource type="AudioStream" uid="uid://dtmgtanlnuqht" path="res://Audio/BrickHit.wav" id="4_shmu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shmu5"]
 
@@ -119,6 +120,7 @@ softness = 1.0
 
 [node name="Bucket" type="RigidBody2D" parent="."]
 position = Vector2(0, 79)
+contact_monitor = true
 script = ExtResource("1_x3d5u")
 acceleration = 15000
 
@@ -131,3 +133,7 @@ texture = ExtResource("2_b43ah")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_vxq8l")
+
+[node name="WallHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_shmu5")
+autoplay = true
