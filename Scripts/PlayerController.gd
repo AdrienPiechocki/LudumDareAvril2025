@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 				cooldown()
 				$WallHit.play()
 				
-				if bodyNode2D.is_in_group("Rock"):
+				if !bodyNode2D.is_in_group("Wall"):
 					bodyNode2D.queue_free()
 					
 				if coins > 0 :
