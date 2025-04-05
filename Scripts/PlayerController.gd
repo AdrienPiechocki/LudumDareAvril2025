@@ -10,11 +10,11 @@ func _physics_process(delta: float) -> void:
 	
 	if aBodies.size() > 0 :
 		for bodyNode2D : Node2D in aBodies :
-			if (bodyNode2D.is_in_group("Wall") || bodyNode2D.is_in_group("Rock")) && flag:
+			if (bodyNode2D.is_in_group("Wall") || bodyNode2D.is_in_group("Rock") || bodyNode2D.is_in_group("Bat")) && flag:
 				cooldown()
 				coins -= 1
 				$WallHit.play()
-				if bodyNode2D.is_in_group("Rock"):
+				if bodyNode2D.is_in_group("Rock") || bodyNode2D.is_in_group("Bat"):
 					bodyNode2D.queue_free()
 	
 	move(delta)
