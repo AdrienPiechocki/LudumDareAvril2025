@@ -1,10 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg7yvc4eakhqj"]
+
+[ext_resource type="Texture2D" uid="uid://b24folax1qgf2" path="res://Sprites/Rock.png" id="1_dlwbl"]
+[ext_resource type="Shader" uid="uid://dma5cf3atup0t" path="res://Shaders/Rock.gdshader" id="1_t25bi"]
 [gd_scene load_steps=4 format=3 uid="uid://cg7yvc4eakhqj"]
 
 [ext_resource type="Texture2D" uid="uid://b24folax1qgf2" path="res://Sprites/Rock.png" id="1_dlwbl"]
 [ext_resource type="Script" uid="uid://thf2i3hsfmfd" path="res://Scripts/rock.gd" id="1_t25bi"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlwbl"]
-size = Vector2(8, 8)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t25bi"]
+shader = ExtResource("1_t25bi")
+shader_parameter/speed = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t25bi"]
+radius = 5.0
 
 [node name="Rock" type="RigidBody2D" groups=["Rock"]]
 mass = 0.1
@@ -12,7 +20,8 @@ gravity_scale = 0.3
 script = ExtResource("1_t25bi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_t25bi")
 texture = ExtResource("1_dlwbl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_dlwbl")
+shape = SubResource("CircleShape2D_t25bi")
