@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm301snojvb2l"]
+
+[ext_resource type="Shader" uid="uid://u71xlwyrmxwy" path="res://Shaders/ShaderWall.gdshader" id="1_bdi57"]
+[ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="2_j2k8g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2k8g"]
+shader = ExtResource("1_bdi57")
+shader_parameter/fSpeed = 0.5
+
+[node name="ShaderWall" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_j2k8g")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_j2k8g")
+stretch_mode = 1
