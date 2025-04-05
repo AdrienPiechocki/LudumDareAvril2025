@@ -5,12 +5,6 @@
 [ext_resource type="Shader" uid="uid://c5tiwm22ug6ax" path="res://Shaders/Coin.gdshader" id="2_214dt"]
 [ext_resource type="PackedScene" uid="uid://baa3sj23mt5s5" path="res://Prefabs/Particules/CoinParticules.tscn" id="3_qxink"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bqgpa"]
-radius = 8.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kmp0c"]
-radius = 1.0
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_214dt"]
 shader = ExtResource("2_214dt")
 shader_parameter/Line_Smoothness = 0.045
@@ -24,12 +18,24 @@ shader_parameter/Position_Min = 0.25
 shader_parameter/Position_Max = 0.5
 shader_parameter/Alpha = 1.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bqgpa"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kmp0c"]
+radius = 1.0
+
 [node name="Coin" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_kmp0c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bqgpa")
+
+[node name="ShaderSpriteLayer" type="Sprite2D" parent="Sprite2D"]
+top_level = true
+material = SubResource("ShaderMaterial_214dt")
+use_parent_material = true
 texture = ExtResource("1_bqgpa")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -41,11 +47,5 @@ shape = SubResource("CircleShape2D_bqgpa")
 shape = SubResource("CircleShape2D_kmp0c")
 
 [node name="CoinParticules" parent="." instance=ExtResource("3_qxink")]
-
-[node name="ShaderSpriteLayer" type="Sprite2D" parent="."]
-top_level = true
-material = SubResource("ShaderMaterial_214dt")
-use_parent_material = true
-texture = ExtResource("1_bqgpa")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
