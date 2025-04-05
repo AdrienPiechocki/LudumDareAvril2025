@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddpep5a014anc"]
+[gd_scene load_steps=9 format=3 uid="uid://ddpep5a014anc"]
 
 [ext_resource type="Script" uid="uid://dlxgtns5wr82p" path="res://Scripts/MenuManager.gd" id="1_8um5k"]
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_853f1"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_df05h"]
 [ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="4_8um5k"]
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="5_xim88"]
+[ext_resource type="FontFile" uid="uid://csv540bsiu83e" path="res://Fonts/Daydream.ttf" id="7_xim88"]
+[ext_resource type="FontFile" uid="uid://cgt18visf14nd" path="res://Fonts/04B_30__.TTF" id="8_koqhg"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -43,10 +45,17 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer_Main"]
 layout_mode = 2
-text = "TITLE
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_xim88")
+theme_override_font_sizes/font_size = 0
+text = "Bucket
+Well
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer_Main"]
 layout_mode = 2
@@ -58,14 +67,17 @@ alignment = 1
 
 [node name="Button1" type="Button" parent="VBoxContainer_Main/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_koqhg")
 text = "PLAY"
 
 [node name="Button2" type="Button" parent="VBoxContainer_Main/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_koqhg")
 text = "INFO"
 
 [node name="Button3" type="Button" parent="VBoxContainer_Main/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_koqhg")
 text = "QUIT"
 
 [node name="VBoxContainer_Info" type="VBoxContainer" parent="."]

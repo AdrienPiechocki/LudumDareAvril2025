@@ -7,7 +7,7 @@ vec2 rotateUV(vec2 vUV, float fRotation) {
 	float fSina = sin(fRotation);
 	return vec2(
 		fCosa * vUV.x - fSina * vUV.y,
-		fCosa * vUV.y + fSina * vUV.x 
+		fCosa * vUV.y + fSina * vUV.x
 	);
 }
 
