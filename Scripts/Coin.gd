@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	move(delta)
+	if (position.y < -get_viewport_rect().end.y):
+		queue_free();
 	
 func move(delta):
 	velocity = Vector2(0,-1) * speed * delta
