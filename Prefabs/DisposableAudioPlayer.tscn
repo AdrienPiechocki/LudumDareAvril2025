@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dacxssbe0j3m5"]
+
+[ext_resource type="Script" uid="uid://carl4gs30d6wj" path="res://Scripts/disposable_audio_player.gd" id="1_ediau"]
+
+[node name="DisposableAudioPlayer" type="AudioStreamPlayer2D"]
+script = ExtResource("1_ediau")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

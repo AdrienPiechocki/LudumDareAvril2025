@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://fbyvwldj67oh"]
+
+[ext_resource type="Script" uid="uid://cp4wpp55208v0" path="res://Scripts/disposable_cpu_particules.gd" id="1_1wiod"]
+
+[node name="DisposableCpuParticules" type="CPUParticles2D"]
+emitting = false
+script = ExtResource("1_1wiod")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
