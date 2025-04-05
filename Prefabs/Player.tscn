@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://d6bmt3ndu7y0"]
+
+[ext_resource type="Script" uid="uid://bqwfv14htm3fg" path="res://Scripts/Rope.gd" id="1_b43ah"]
+[ext_resource type="Script" uid="uid://cyl674j21j5oc" path="res://Scripts/PlayerController.gd" id="1_x3d5u"]
+[ext_resource type="Texture2D" uid="uid://ddchc2rj6ujgw" path="res://Sprites/Bucket.png" id="2_b43ah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shmu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3d5u"]
+size = Vector2(3, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxq8l"]
+size = Vector2(16, 16)
+
+[node name="Player" type="Node2D"]
+
+[node name="Source" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Source"]
+shape = SubResource("RectangleShape2D_shmu5")
+
+[node name="PinJoint2D1" type="PinJoint2D" parent="."]
+position = Vector2(0, 10)
+node_a = NodePath("../Source")
+node_b = NodePath("../Rope1")
+softness = 1.0
+
+[node name="Rope1" type="RigidBody2D" parent="."]
+position = Vector2(0, 10)
+
+[node name="Marker2D1" type="Marker2D" parent="Rope1"]
+position = Vector2(0, -10)
+
+[node name="Line2D" type="Line2D" parent="Rope1" node_paths=PackedStringArray("start_point", "end_point")]
+width = 2.0
+default_color = Color(0.231373, 0.152941, 0.0941176, 1)
+script = ExtResource("1_b43ah")
+start_point = NodePath("../Marker2D1")
+end_point = NodePath("../../Rope2/Marker2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope1"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_x3d5u")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(0, 26)
+node_a = NodePath("../Rope1")
+node_b = NodePath("../Rope2")
+softness = 1.0
+
+[node name="Rope2" type="RigidBody2D" parent="."]
+position = Vector2(0, 30.33)
+
+[node name="Marker2D2" type="Marker2D" parent="Rope2"]
+position = Vector2(0, -4)
+
+[node name="Line2D" type="Line2D" parent="Rope2" node_paths=PackedStringArray("start_point", "end_point")]
+width = 2.0
+default_color = Color(0.231373, 0.152941, 0.0941176, 1)
+script = ExtResource("1_b43ah")
+start_point = NodePath("../Marker2D2")
+end_point = NodePath("../../Rope3/Marker2D3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope2"]
+position = Vector2(0, 3.67)
+shape = SubResource("RectangleShape2D_x3d5u")
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(0, 42)
+node_a = NodePath("../Rope2")
+node_b = NodePath("../Rope3")
+softness = 1.0
+
+[node name="Rope3" type="RigidBody2D" parent="."]
+position = Vector2(0, 40)
+
+[node name="Marker2D3" type="Marker2D" parent="Rope3"]
+position = Vector2(0, 2)
+
+[node name="Line2D" type="Line2D" parent="Rope3" node_paths=PackedStringArray("start_point", "end_point")]
+width = 2.0
+default_color = Color(0.231855, 0.153453, 0.0923962, 1)
+script = ExtResource("1_b43ah")
+start_point = NodePath("../Marker2D3")
+end_point = NodePath("../../Bucket/Marker2D4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope3"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_x3d5u")
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(0, 58)
+node_a = NodePath("../Rope3")
+node_b = NodePath("../Bucket")
+softness = 1.0
+
+[node name="Bucket" type="RigidBody2D" parent="."]
+position = Vector2(0, 63)
+script = ExtResource("1_x3d5u")
+maxSpeed = 30000
+acceleration = 15000
+friction = 150
+
+[node name="Marker2D4" type="Marker2D" parent="Bucket"]
+position = Vector2(0, -4)
+
+[node name="BucketSprite" type="Sprite2D" parent="Bucket"]
+texture = ExtResource("2_b43ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_vxq8l")
