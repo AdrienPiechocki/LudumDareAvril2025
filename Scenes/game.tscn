@@ -5,5 +5,8 @@
 [node name="Game" type="Node2D"]
 
 [node name="LeftWall" type="Sprite2D" parent="."]
+texture_repeat = 2
 position = Vector2(-24, 8)
 texture = ExtResource("1_ebmjs")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 300)
