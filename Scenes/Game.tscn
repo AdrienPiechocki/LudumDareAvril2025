@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=9 format=3 uid="uid://rcupgrgt5vw4"]
 
 [ext_resource type="Script" uid="uid://fls2jxgg7laf" path="res://Scripts/GameManager.gd" id="1_2irst"]
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_fgofq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_kldst"]
 [ext_resource type="PackedScene" uid="uid://d6bmt3ndu7y0" path="res://Prefabs/Player.tscn" id="6_7lihs"]
+[ext_resource type="AudioStream" uid="uid://dtmgtanlnuqht" path="res://Audio/BrickHit.wav" id="7_2irst"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_2irst")
@@ -32,6 +33,11 @@ iYSize = 272
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="CoinHit" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(71, -89)
+stream = ExtResource("7_2irst")
+volume_db = 6.0
 
 [node name="Player" parent="." instance=ExtResource("6_7lihs")]
 position = Vector2(71, -10)
