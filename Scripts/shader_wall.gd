@@ -9,6 +9,6 @@ func _ready():
 	$TextureRect.size.x = iXSize
 	$TextureRect.size.y = iYSize
 	
-	$CollisionShape2D.shape.size.x = iXSize
+	$CollisionShape2D.shape.size.x = iXSize-24
 	$CollisionShape2D.shape.size.y = iYSize
 	$CollisionShape2D.position.y = iYSize/2
