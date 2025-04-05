@@ -2,7 +2,8 @@ shader_type canvas_item;
 
 uniform float fSpeed = .5;
 
-void vertex() {
+void vertex() 
+{
 	UV.y += TIME * fSpeed;
 }
 

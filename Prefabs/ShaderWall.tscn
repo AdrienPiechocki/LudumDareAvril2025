@@ -1,17 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm301snojvb2l"]
+[gd_scene load_steps=6 format=3 uid="uid://bm301snojvb2l"]
 
 [ext_resource type="Shader" uid="uid://u71xlwyrmxwy" path="res://Shaders/ShaderWall.gdshader" id="1_bdi57"]
+[ext_resource type="Script" uid="uid://dmlut6itye7aj" path="res://Scripts/shader_wall.gd" id="1_l135e"]
 [ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="2_j2k8g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2k8g"]
 shader = ExtResource("1_bdi57")
 shader_parameter/fSpeed = 0.5
 
-[node name="ShaderWall" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2k8g"]
+
+[node name="ShaderWall" type="StaticBody2D"]
+script = ExtResource("1_l135e")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_j2k8g")
-offset_right = 48.0
-offset_bottom = 66.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -8.0
+offset_right = 24.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_j2k8g")
 stretch_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j2k8g")
