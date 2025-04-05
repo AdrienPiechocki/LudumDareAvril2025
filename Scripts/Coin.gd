@@ -11,9 +11,9 @@ func move(delta):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	get_parent().add_child($CoinParticules)
-	get_node("../CoinParticules").position = position
-	$CoinParticules.emitting = true
+	var particules : CPUParticles2D = $CoinParticules
+	particules.reparent(get_parent())
+	particules.emitting = true
 	get_node("../CoinHit").play()
 	get_node("../Player/Bucket").addCoin()
 	queue_free()
