@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cg7yvc4eakhqj"]
 
 [ext_resource type="Texture2D" uid="uid://b24folax1qgf2" path="res://Sprites/Rock.png" id="1_dlwbl"]
-[ext_resource type="Shader" path="res://Shaders/Rock.gdshader" id="1_t25bi"]
+[ext_resource type="Shader" uid="uid://dma5cf3atup0t" path="res://Shaders/Rock.gdshader" id="1_t25bi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t25bi"]
 shader = ExtResource("1_t25bi")
