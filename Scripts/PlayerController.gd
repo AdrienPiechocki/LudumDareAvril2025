@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var acceleration:int = 150
 @export var axis:Vector2 = Vector2.ZERO
+@export var coins:int = 0
 
 func _physics_process(delta: float) -> void:
 	var aBodies : Array[Node2D] = get_colliding_bodies()
@@ -12,6 +13,7 @@ func _physics_process(delta: float) -> void:
 				$WallHit.play();
 	
 	move(delta)
+	mass = 1 + coins
 
 func get_input_axis():
 	axis.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -21,4 +23,6 @@ func get_input_axis():
 func move(delta):
 	axis = get_input_axis()
 	apply_force(axis * acceleration * delta)
-	
+
+func addCoin():
+	coins += 1

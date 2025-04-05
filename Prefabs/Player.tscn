@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d6bmt3ndu7y0"]
+[gd_scene load_steps=9 format=3 uid="uid://d6bmt3ndu7y0"]
 
 [ext_resource type="Script" uid="uid://bqwfv14htm3fg" path="res://Scripts/Rope.gd" id="1_b43ah"]
 [ext_resource type="Script" uid="uid://cyl674j21j5oc" path="res://Scripts/PlayerController.gd" id="1_x3d5u"]
@@ -11,6 +11,9 @@
 size = Vector2(3, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxq8l"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg3t4"]
 size = Vector2(16, 16)
 
 [node name="Player" type="Node2D"]
@@ -33,6 +36,7 @@ position = Vector2(0, 10)
 position = Vector2(0, -10)
 
 [node name="Line2D" type="Line2D" parent="Rope1" node_paths=PackedStringArray("start_point", "end_point")]
+position = Vector2(1, 0)
 width = 2.0
 default_color = Color(0.231373, 0.152941, 0.0941176, 1)
 script = ExtResource("1_b43ah")
@@ -140,3 +144,9 @@ position = Vector2(0, -79)
 stream = ExtResource("4_shmu5")
 volume_db = 6.0
 autoplay = true
+
+[node name="Area2D" type="Area2D" parent="Bucket"]
+position = Vector2(0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket/Area2D"]
+shape = SubResource("RectangleShape2D_gg3t4")
