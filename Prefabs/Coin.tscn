@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c42lalo5yvoic"]
 
-[ext_resource type="Texture2D" uid="uid://dykldoqq8xuim" path="res://Sprites/Coin.png" id="1_bqgpa"]
+[ext_resource type="Texture2D" uid="uid://5uyarsp60e52" path="res://Sprites/coin.png" id="1_bqgpa"]
 
 [node name="Coin" type="Node2D"]
-scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bqgpa")
