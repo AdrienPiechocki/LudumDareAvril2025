@@ -1,22 +1,74 @@
-[gd_scene load_steps=3 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=7 format=3 uid="uid://rcupgrgt5vw4"]
 
-[ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="1_iukft"]
-[ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_gl6un"]
+[ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="1_gl6un"]
+[ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://cr821rwur43t5" path="res://Prefabs/Rope.tscn" id="3_j5yw3"]
+[ext_resource type="Texture2D" uid="uid://ddchc2rj6ujgw" path="res://Sprites/Bucket.png" id="4_kldst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2bpf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kldst"]
+size = Vector2(178, 20)
 
 [node name="Game" type="Node2D"]
 
 [node name="LeftWall" type="Sprite2D" parent="."]
 texture_repeat = 2
 position = Vector2(-50, 0)
-texture = ExtResource("1_iukft")
+texture = ExtResource("1_gl6un")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 300)
 
 [node name="RightWall" type="Sprite2D" parent="."]
 texture_repeat = 2
 position = Vector2(50, 0)
-texture = ExtResource("2_gl6un")
+texture = ExtResource("2_j5yw3")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 300)
 
 [node name="Background" type="Sprite2D" parent="."]
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Rope" parent="Player" instance=ExtResource("3_j5yw3")]
+position = Vector2(0, -40)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Player"]
+position = Vector2(0, -32)
+node_a = NodePath("../Rope")
+node_b = NodePath("../Rope2")
+
+[node name="Rope2" parent="Player" instance=ExtResource("3_j5yw3")]
+position = Vector2(0, -24)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Player"]
+position = Vector2(0, -16)
+node_a = NodePath("../Rope2")
+node_b = NodePath("../Rope3")
+
+[node name="Rope3" parent="Player" instance=ExtResource("3_j5yw3")]
+position = Vector2(0, -8)
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="Player"]
+node_a = NodePath("../Rope3")
+node_b = NodePath("../Bucket")
+
+[node name="Bucket" type="RigidBody2D" parent="Player"]
+position = Vector2(0, 5)
+
+[node name="BucketSprite" type="Sprite2D" parent="Player/Bucket"]
+texture = ExtResource("4_kldst")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Bucket"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_b2bpf")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(10, 10)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6, 51)
+shape = SubResource("RectangleShape2D_kldst")
