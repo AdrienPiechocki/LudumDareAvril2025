@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=12 format=3 uid="uid://rcupgrgt5vw4"]
 
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_fgofq"]
 [ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://bn2bvn7hh1ebm" path="res://Sprites/Wall.png" id="2_2irst"]
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_j5yw3"]
+[ext_resource type="Script" uid="uid://cyl674j21j5oc" path="res://Scripts/PlayerController.gd" id="3_2irst"]
 [ext_resource type="PackedScene" uid="uid://d348dek170633" path="res://Prefabs/Rope.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_kldst"]
 [ext_resource type="Texture2D" uid="uid://ddchc2rj6ujgw" path="res://Sprites/Bucket.png" id="4_kldst"]
@@ -26,44 +27,47 @@ iXSize = 144
 iYSize = 256
 
 [node name="Player" type="Node2D" parent="."]
-position = Vector2(72, 128)
+position = Vector2(72, -10)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Player"]
-position = Vector2(0, -58)
+[node name="Source" type="StaticBody2D" parent="Player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Source"]
 shape = SubResource("RectangleShape2D_2irst")
 
 [node name="PinJoint2D4" type="PinJoint2D" parent="Player"]
-position = Vector2(0, -48)
-node_a = NodePath("../StaticBody2D")
+position = Vector2(0, 10)
+node_a = NodePath("../Source")
 node_b = NodePath("../Rope")
 
 [node name="Rope" parent="Player" instance=ExtResource("3_j5yw3")]
-position = Vector2(0, -40)
+position = Vector2(0, 18)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Player"]
-position = Vector2(0, -32)
+position = Vector2(0, 26)
 node_a = NodePath("../Rope")
 node_b = NodePath("../Rope2")
 
 [node name="Rope2" parent="Player" instance=ExtResource("3_j5yw3")]
-position = Vector2(0, -24)
+position = Vector2(0, 34)
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="Player"]
-position = Vector2(0, -16)
+position = Vector2(0, 42)
 node_a = NodePath("../Rope2")
 node_b = NodePath("../Rope3")
 
 [node name="Rope3" parent="Player" instance=ExtResource("3_j5yw3")]
-position = Vector2(0, -8)
+position = Vector2(0, 50)
 
 [node name="PinJoint2D3" type="PinJoint2D" parent="Player"]
+position = Vector2(0, 58)
 node_a = NodePath("../Rope3")
 node_b = NodePath("../Bucket")
 
 [node name="Bucket" type="RigidBody2D" parent="Player"]
-position = Vector2(0, 5)
+position = Vector2(0, 63)
+script = ExtResource("3_2irst")
+maxSpeed = 30000
+acceleration = 15000
 
 [node name="BucketSprite" type="Sprite2D" parent="Player/Bucket"]
 texture = ExtResource("4_kldst")
