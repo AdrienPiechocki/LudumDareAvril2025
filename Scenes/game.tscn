@@ -18,3 +18,5 @@ position = Vector2(50, 0)
 texture = ExtResource("2_gl6un")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 300)
+
+[node name="Background" type="Sprite2D" parent="."]
