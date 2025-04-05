@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://carl4gs30d6wj" path="res://Scripts/disposable_audio_player.gd" id="1_ediau"]
 
 [node name="DisposableAudioPlayer" type="AudioStreamPlayer2D"]
+autoplay = true
 script = ExtResource("1_ediau")
 
 [connection signal="finished" from="." to="." method="_on_finished"]
