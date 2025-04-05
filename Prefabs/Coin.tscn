@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c42lalo5yvoic"]
+[gd_scene load_steps=6 format=3 uid="uid://c42lalo5yvoic"]
 
 [ext_resource type="Texture2D" uid="uid://5uyarsp60e52" path="res://Sprites/coin.png" id="1_bqgpa"]
 [ext_resource type="Script" uid="uid://rvypf40oawd7" path="res://Scripts/Coin.gd" id="1_kmp0c"]
+[ext_resource type="PackedScene" uid="uid://baa3sj23mt5s5" path="res://Prefabs/Particules/CoinParticules.tscn" id="3_qxink"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bqgpa"]
 radius = 8.0
@@ -22,5 +23,7 @@ shape = SubResource("CircleShape2D_bqgpa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kmp0c")
+
+[node name="CoinParticules" parent="." instance=ExtResource("3_qxink")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3xn2583ymqho"]
 
-[ext_resource type="Script" uid="uid://cvxvq78i8qy3b" path="res://Scripts/rope_segment.gd" id="1_qmkpa"]
+[ext_resource type="Script" path="res://Scripts/rope_segment.gd" id="1_qmkpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmkpa"]
 size = Vector2(3, 16)
 
 [node name="RopeSegment" type="RigidBody2D" node_paths=PackedStringArray("start_point", "end_point") groups=["RopeSegment"]]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_qmkpa")
 start_point = NodePath("StartPoint")
 end_point = NodePath(".")
