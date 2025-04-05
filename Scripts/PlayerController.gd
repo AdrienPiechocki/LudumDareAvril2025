@@ -1,8 +1,6 @@
 extends RigidBody2D
 
-@export var maxSpeed:int = 30
 @export var acceleration:int = 150
-@export var friction:int = 120
 @export var axis:Vector2 = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
