@@ -13,6 +13,9 @@ func _physics_process(delta: float) -> void:
 				$WallHit.play();
 	
 	move(delta)
+	
+	if coins < 0:
+		coins = 0	
 	mass = 1 + coins
 
 func get_input_axis():

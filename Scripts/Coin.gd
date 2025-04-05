@@ -11,5 +11,6 @@ func move(delta):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	queue_free()
+	get_node("../CoinHit").play()
 	get_node("../Player/Bucket").addCoin()
+	queue_free()
