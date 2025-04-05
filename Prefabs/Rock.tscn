@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg7yvc4eakhqj"]
+[gd_scene load_steps=4 format=3 uid="uid://cg7yvc4eakhqj"]
 
 [ext_resource type="Texture2D" uid="uid://b24folax1qgf2" path="res://Sprites/Rock.png" id="1_dlwbl"]
+[ext_resource type="Script" uid="uid://thf2i3hsfmfd" path="res://Prefabs/rock.gd" id="1_t25bi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dlwbl"]
 size = Vector2(8, 8)
@@ -8,6 +9,7 @@ size = Vector2(8, 8)
 [node name="Rock" type="RigidBody2D" groups=["Rock"]]
 mass = 0.1
 gravity_scale = 0.3
+script = ExtResource("1_t25bi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dlwbl")
