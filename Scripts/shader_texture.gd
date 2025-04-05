@@ -1,4 +1,4 @@
-class_name ShaderWall extends StaticBody2D
+class_name ShaderTexture extends Node
 
 @export var rTexture : Resource
 @export var iXSize : int
@@ -8,7 +8,3 @@ func _ready():
 	$TextureRect.texture = rTexture
 	$TextureRect.size.x = iXSize
 	$TextureRect.size.y = iYSize
-	
-	$CollisionShape2D.shape.size.x = iXSize
-	$CollisionShape2D.shape.size.y = iYSize
-	$CollisionShape2D.position.y = iYSize/2

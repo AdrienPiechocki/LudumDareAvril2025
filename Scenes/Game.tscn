@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=11 format=3 uid="uid://rcupgrgt5vw4"]
 
+[ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_fgofq"]
 [ext_resource type="Texture2D" uid="uid://do0k22qnbxb4d" path="res://Sprites/LeftWall.png" id="1_gl6un"]
+[ext_resource type="Texture2D" uid="uid://bn2bvn7hh1ebm" path="res://Sprites/Wall.png" id="2_2irst"]
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://d348dek170633" path="res://Prefabs/Rope.tscn" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_kldst"]
@@ -16,7 +18,12 @@ size = Vector2(178, 20)
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="ShaderBackground" parent="." instance=ExtResource("1_fgofq")]
+modulate = Color(0.6, 0.6, 0.6, 1)
+show_behind_parent = true
+rTexture = ExtResource("2_2irst")
+iXSize = 144
+iYSize = 256
 
 [node name="Player" type="Node2D" parent="."]
 position = Vector2(72, 128)
@@ -72,12 +79,13 @@ position = Vector2(72, 256)
 shape = SubResource("RectangleShape2D_kldst")
 
 [node name="LeftWall" parent="." instance=ExtResource("3_kldst")]
+position = Vector2(0, -2)
 rTexture = ExtResource("1_gl6un")
 iXSize = 48
 iYSize = 272
 
 [node name="RightWall" parent="." instance=ExtResource("3_kldst")]
-position = Vector2(144, 0)
+position = Vector2(144, -2)
 rTexture = ExtResource("2_j5yw3")
 iXSize = 48
 iYSize = 272
