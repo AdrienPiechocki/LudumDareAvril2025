@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddpep5a014anc"]
+[gd_scene load_steps=12 format=3 uid="uid://ddpep5a014anc"]
 
 [ext_resource type="Script" uid="uid://dlxgtns5wr82p" path="res://Scripts/MenuManager.gd" id="1_8um5k"]
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_853f1"]
@@ -9,6 +9,18 @@
 [ext_resource type="FontFile" uid="uid://csv540bsiu83e" path="res://Fonts/Daydream.ttf" id="7_xim88"]
 [ext_resource type="FontFile" uid="uid://cgt18visf14nd" path="res://Fonts/04B_30__.TTF" id="8_koqhg"]
 [ext_resource type="AudioStream" uid="uid://ii3w0kleagti" path="res://Audio/Musics/MenuSong.wav" id="9_cmrfp"]
+
+[sub_resource type="Environment" id="Environment_cmrfp"]
+background_mode = 3
+ambient_light_source = 1
+ambient_light_color = Color(0.823529, 0.788235, 0.647059, 1)
+ambient_light_energy = 14.27
+tonemap_mode = 1
+tonemap_exposure = 1.1
+tonemap_white = 0.5
+glow_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_loo7a"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -123,6 +135,10 @@ anchor_mode = 0
 position = Vector2(1, 0)
 stream = ExtResource("9_cmrfp")
 autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cmrfp")
+camera_attributes = SubResource("CameraAttributesPractical_loo7a")
 
 [connection signal="pressed" from="VBoxContainer_Main/HBoxContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="VBoxContainer_Main/HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
