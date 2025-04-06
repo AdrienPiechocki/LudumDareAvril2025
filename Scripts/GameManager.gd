@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$HBoxContainer/Label.text = "Coins: " + str($Player/Bucket.coins)
-	if $Player/Bucket.coins == 20 && flag:
+	if $Player/Bucket.coins == 1 && flag:
 		win()
 		
 	if Input.is_action_pressed("ui_cancel"):

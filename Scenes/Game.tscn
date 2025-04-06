@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=13 format=3 uid="uid://rcupgrgt5vw4"]
 
 [ext_resource type="Script" uid="uid://fls2jxgg7laf" path="res://Scripts/GameManager.gd" id="1_2irst"]
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_fgofq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_kldst"]
 [ext_resource type="PackedScene" uid="uid://d6bmt3ndu7y0" path="res://Prefabs/Player.tscn" id="6_7lihs"]
 [ext_resource type="AudioStream" uid="uid://dtmgtanlnuqht" path="res://Audio/BrickHit.wav" id="7_2irst"]
+[ext_resource type="AudioStream" uid="uid://ded6c8ulapxh3" path="res://Audio/Musics/GameSong.wav" id="7_71axn"]
 [ext_resource type="FontFile" uid="uid://csv540bsiu83e" path="res://Fonts/Daydream.ttf" id="9_bf53h"]
 
 [sub_resource type="Environment" id="Environment_bf53h"]
@@ -47,6 +48,10 @@ iYSize = 272
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_71axn")
+autoplay = true
 
 [node name="CoinHit" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(71, -89)

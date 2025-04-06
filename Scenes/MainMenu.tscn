@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddpep5a014anc"]
+[gd_scene load_steps=10 format=3 uid="uid://ddpep5a014anc"]
 
 [ext_resource type="Script" uid="uid://dlxgtns5wr82p" path="res://Scripts/MenuManager.gd" id="1_8um5k"]
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_853f1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="5_xim88"]
 [ext_resource type="FontFile" uid="uid://csv540bsiu83e" path="res://Fonts/Daydream.ttf" id="7_xim88"]
 [ext_resource type="FontFile" uid="uid://cgt18visf14nd" path="res://Fonts/04B_30__.TTF" id="8_koqhg"]
+[ext_resource type="AudioStream" uid="uid://ii3w0kleagti" path="res://Audio/Musics/MenuSong.wav" id="9_cmrfp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -114,6 +115,11 @@ text = "BACK"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, 0)
+stream = ExtResource("9_cmrfp")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer_Main/HBoxContainer/VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="VBoxContainer_Main/HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
