@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	if coins < 0:
 		coins = 0	
 	mass = 1 + coins
+	$BucketSprite.frame = coins/2
 	
 	if abs(linear_velocity.x) > 125:
 		if linear_velocity.x > 0:

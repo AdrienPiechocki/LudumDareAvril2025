@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddchc2rj6ujgw"
-path="res://.godot/imported/Bucket.png-e060ca3acb4f3eda7833f8b1bec81ee9.ctex"
+uid="uid://66a67kyd04gg"
+path="res://.godot/imported/Bucket7.png-7d6cb5e5d6b51d5ee2f866bb90e497d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bucket.png"
-dest_files=["res://.godot/imported/Bucket.png-e060ca3acb4f3eda7833f8b1bec81ee9.ctex"]
+source_file="res://Sprites/bucket/Bucket7.png"
+dest_files=["res://.godot/imported/Bucket7.png-7d6cb5e5d6b51d5ee2f866bb90e497d5.ctex"]
 
 [params]
 
