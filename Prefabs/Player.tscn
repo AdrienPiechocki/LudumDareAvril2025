@@ -124,6 +124,7 @@ softness = 1.0
 
 [node name="Bucket" type="RigidBody2D" parent="." node_paths=PackedStringArray("joints")]
 position = Vector2(0, 79)
+gravity_scale = 1.2
 contact_monitor = true
 max_contacts_reported = 256
 script = ExtResource("1_x3d5u")
