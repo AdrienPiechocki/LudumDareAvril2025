@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctv4d2k5bmy6d"]
 
-[ext_resource type="Script" uid="uid://b0uig0ch4get1" path="res://Prefabs/falling_coin.gd" id="1_0gcwk"]
+[ext_resource type="Script" uid="uid://b2mikf0mlfqub" path="res://Scripts/falling_coin.gd" id="1_oq7qx"]
 [ext_resource type="Texture2D" uid="uid://cp65jl8nkif4w" path="res://Sprites/SmallCoin.png" id="2_18dlw"]
 [ext_resource type="Shader" uid="uid://c5tiwm22ug6ax" path="res://Shaders/Coin.gdshader" id="3_oq7qx"]
 
@@ -21,7 +21,7 @@ shader_parameter/Position_Max = 0.5
 shader_parameter/Alpha = 1.0
 
 [node name="FallingCoin" type="RigidBody2D"]
-script = ExtResource("1_0gcwk")
+script = ExtResource("1_oq7qx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0gcwk")
