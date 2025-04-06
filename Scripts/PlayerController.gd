@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var acceleration:int = 40000
 @export var axis:Vector2 = Vector2.ZERO
 @export var coins:int = 0
-
+@export var joints:Array[PinJoint2D]
 var coin = preload("res://Prefabs/FallingCoin.tscn")
 
 var _bHaveCoin : bool = false
@@ -48,6 +48,15 @@ func get_input_axis() -> Vector2:
 
 func move(delta):
 	axis = get_input_axis()
+	if axis.y > 0:
+		for joint:PinJoint2D in joints:
+			joint.softness = 1.1
+	elif axis.y < 0:
+		for joint:PinJoint2D in joints:
+			joint.softness = 0.9
+	else:
+		for joint:PinJoint2D in joints:
+			joint.softness = 1
 	apply_force(axis * acceleration * delta)
 
 func addCoin():
