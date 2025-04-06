@@ -17,3 +17,5 @@ emission_rect_extents = Vector2(5, 1)
 color_ramp = SubResource("Gradient_iruuw")
 script = ExtResource("1_sy8be")
 metadata/_custom_type_script = "uid://cp4wpp55208v0"
+
+[connection signal="finished" from="." to="." method="_on_finished"]
