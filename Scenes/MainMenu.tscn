@@ -23,7 +23,7 @@ modulate = Color(0.294118, 0.239216, 0.266667, 1)
 show_behind_parent = true
 rTexture = ExtResource("2_8saeu")
 iXSize = 144
-iYSize = 512
+iYSize = 544
 
 [node name="LeftWall" parent="." instance=ExtResource("3_df05h")]
 position = Vector2(0, -2)
