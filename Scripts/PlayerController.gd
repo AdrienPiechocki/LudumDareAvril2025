@@ -50,10 +50,10 @@ func move(delta):
 	axis = get_input_axis()
 	if axis.y > 0:
 		for joint:PinJoint2D in joints:
-			joint.softness = 1.1
+			joint.softness = 1.05
 	elif axis.y < 0:
 		for joint:PinJoint2D in joints:
-			joint.softness = 0.9
+			joint.softness = 0.95
 	else:
 		for joint:PinJoint2D in joints:
 			joint.softness = 1
