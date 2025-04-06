@@ -5,6 +5,7 @@ extends RigidBody2D
 @export var coins:int = 0
 @export var joints:Array[PinJoint2D]
 var coin = preload("res://Prefabs/FallingCoin.tscn")
+var hitParticlues = preload("res://Prefabs/Particules/BucketHitParticules.tscn")
 
 var _bHaveCoin : bool = false
 var flag:bool = true
@@ -17,6 +18,12 @@ func _physics_process(delta: float) -> void:
 			if bodyNode2D.is_in_group("Obstacles") && flag:
 				cooldown()
 				$WallHit.play()
+				
+				var contact_point : Vector2 = (to_local(global_position) + to_local(bodyNode2D.global_position)) / 2
+				var hitParticluesInstance : CPUParticles2D = hitParticlues.instantiate()
+				hitParticluesInstance.position = contact_point
+				add_child(hitParticluesInstance)
+				hitParticluesInstance.emitting = true
 				
 				if !bodyNode2D.is_in_group("Wall"):
 					bodyNode2D.queue_free()
