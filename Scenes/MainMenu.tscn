@@ -89,9 +89,12 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer_Info"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("7_xim88")
+theme_override_font_sizes/font_size = 12
 text = "
-Information 
-here
+Get coins
+and avoid 
+obstacles
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -105,6 +108,7 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="VBoxContainer_Info/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_koqhg")
 text = "BACK"
 
 [node name="Camera2D" type="Camera2D" parent="."]
