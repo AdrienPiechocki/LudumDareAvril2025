@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpubuvd5wtnsb"]
+
+[ext_resource type="Script" uid="uid://cp4wpp55208v0" path="res://Scripts/disposable_cpu_particules.gd" id="1_sy8be"]
+
+[sub_resource type="Gradient" id="Gradient_iruuw"]
+offsets = PackedFloat32Array(0.128049, 0.402439, 1)
+colors = PackedColorArray(0.294118, 0.447059, 0.431373, 1, 0.517647, 0.470588, 0.458824, 1, 0.670588, 0.607843, 0.556863, 1)
+
+[node name="FallingRockParticules" type="CPUParticles2D"]
+preprocess = 0.1
+speed_scale = 0.75
+explosiveness = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+color_ramp = SubResource("Gradient_iruuw")
+script = ExtResource("1_sy8be")
+metadata/_custom_type_script = "uid://cp4wpp55208v0"
