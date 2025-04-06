@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 	$HBoxContainer/Label.text = "Coins: " + str($Player/Bucket.coins)
 	if $Player/Bucket.coins == 20 && flag:
 		win()
+		
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	
 func win():
 	flag = false
