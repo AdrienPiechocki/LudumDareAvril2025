@@ -7,6 +7,8 @@ offsets = PackedFloat32Array(0.128049, 0.402439, 1)
 colors = PackedColorArray(0.294118, 0.447059, 0.431373, 1, 0.517647, 0.470588, 0.458824, 1, 0.670588, 0.607843, 0.556863, 1)
 
 [node name="FallingRockParticules" type="CPUParticles2D"]
+emitting = false
+one_shot = true
 preprocess = 0.1
 speed_scale = 0.75
 explosiveness = 0.5
