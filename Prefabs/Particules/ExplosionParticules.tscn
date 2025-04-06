@@ -18,3 +18,5 @@ initial_velocity_max = 100.0
 scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_n1ke4")
 script = ExtResource("1_n1ke4")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
