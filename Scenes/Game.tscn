@@ -16,9 +16,10 @@ script = ExtResource("1_2irst")
 [node name="ShaderBackground" parent="." instance=ExtResource("1_fgofq")]
 modulate = Color(0.294118, 0.239216, 0.266667, 1)
 show_behind_parent = true
+position = Vector2(0, -2)
 rTexture = ExtResource("2_2irst")
 iXSize = 144
-iYSize = 256
+iYSize = 272
 
 [node name="LeftWall" parent="." instance=ExtResource("3_kldst")]
 position = Vector2(0, -2)
