@@ -5,6 +5,7 @@ var rock = preload("res://Prefabs/Rock.tscn")
 var rockParticules = preload("res://Prefabs/Particules/FallingRockParticules.tscn")
 var bat = preload("res://Prefabs/Bat.tscn")
 var rng = RandomNumberGenerator.new()
+var flag:bool = true
 
 func _ready() -> void:
 	spawnCoin()
@@ -13,11 +14,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$HBoxContainer/Label.text = "Coins: " + str($Player/Bucket.coins)
-	if $Player/Bucket.coins == 20:
+	if $Player/Bucket.coins == 20 && flag:
 		win()
 	
 func win():
-	pass	
+	flag = false
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
 func spawnBat():
 	var batInstance = bat.instantiate()

@@ -3,7 +3,6 @@ extends Control
 @export var speed:int = 500
 @export var moveDown:bool = false
 @export var moveUp:bool = false
-var scene = preload("res://Scenes/Game.tscn").instantiate()
 
 
 func _process(delta: float) -> void:
@@ -23,7 +22,7 @@ func moveCamUp(delta):
 	$Camera2D.position.y -= 1 * speed * delta
 
 func _on_button_1_pressed() -> void:
-	get_tree().root.add_child(scene)
+	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	
 
 func _on_button_2_pressed() -> void:
