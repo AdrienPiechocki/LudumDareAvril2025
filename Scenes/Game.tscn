@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=14 format=3 uid="uid://rcupgrgt5vw4"]
 
 [ext_resource type="Script" uid="uid://fls2jxgg7laf" path="res://Scripts/GameManager.gd" id="1_2irst"]
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_fgofq"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ded6c8ulapxh3" path="res://Audio/Musics/GameSong.wav" id="7_71axn"]
 [ext_resource type="AudioStream" uid="uid://co2v8c5rc4hfu" path="res://Audio/CoinCut.wav" id="8_71axn"]
 [ext_resource type="FontFile" uid="uid://csv540bsiu83e" path="res://Fonts/Daydream.ttf" id="9_bf53h"]
+[ext_resource type="Texture2D" uid="uid://cp65jl8nkif4w" path="res://Sprites/SmallCoin.png" id="10_dahhg"]
 
 [sub_resource type="Environment" id="Environment_bf53h"]
 background_mode = 3
@@ -64,17 +65,19 @@ max_polyphony = 2
 [node name="Player" parent="." instance=ExtResource("6_7lihs")]
 position = Vector2(71, -10)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SmallCoin" type="Sprite2D" parent="."]
+position = Vector2(108, 9)
+texture = ExtResource("10_dahhg")
 
-[node name="Label" type="Label" parent="HBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="."]
+offset_left = 114.0
+offset_top = 3.0
+offset_right = 115.0
+offset_bottom = 14.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("9_bf53h")
 theme_override_font_sizes/font_size = 8
-text = "Coins : "
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bf53h")

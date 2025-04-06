@@ -34,22 +34,22 @@ script = ExtResource("1_8um5k")
 [node name="ShaderBackground" parent="." instance=ExtResource("1_853f1")]
 modulate = Color(0.294118, 0.239216, 0.266667, 1)
 show_behind_parent = true
-position = Vector2(0, -2)
+position = Vector2(0, -258)
 rTexture = ExtResource("2_8saeu")
 iXSize = 144
-iYSize = 544
+iYSize = 816
 
 [node name="LeftWall" parent="." instance=ExtResource("3_df05h")]
-position = Vector2(0, -2)
+position = Vector2(0, -258)
 rTexture = ExtResource("4_8um5k")
 iXSize = 48
-iYSize = 544
+iYSize = 816
 
 [node name="RightWall" parent="." instance=ExtResource("3_df05h")]
-position = Vector2(144, -2)
+position = Vector2(144, -258)
 rTexture = ExtResource("5_xim88")
 iXSize = 48
-iYSize = 544
+iYSize = 816
 
 [node name="VBoxContainer_Main" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -109,7 +109,8 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("7_xim88")
 theme_override_font_sizes/font_size = 12
 text = "
-Get coins
+Get 
+20 coins
 and avoid 
 obstacles
 "

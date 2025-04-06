@@ -8,12 +8,13 @@ var rng = RandomNumberGenerator.new()
 var flag:bool = true
 
 func _ready() -> void:
+	await get_tree().create_timer(1).timeout
 	spawnCoin()
 	spawnRock()
 	spawnBat()
 
 func _process(delta: float) -> void:
-	$HBoxContainer/Label.text = "Coins: " + str($Player/Bucket.coins)
+	$Label.text = str($Player/Bucket.coins)
 	if $Player/Bucket.coins == 20 && flag:
 		win()
 		

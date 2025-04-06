@@ -1,9 +1,9 @@
 extends Control
 
 @export var speed:int = 500
-@export var moveDown:bool = false
-@export var moveUp:bool = false
-
+var moveDown:bool = false
+var moveUp:bool = false
+var inInfo:bool = false
 
 func _process(delta: float) -> void:
 	if moveDown:
@@ -12,7 +12,10 @@ func _process(delta: float) -> void:
 		moveCamUp(delta)
 	if $Camera2D.position.y >= 256:
 		moveDown = false
-	if $Camera2D.position.y <= 0:
+	if $Camera2D.position.y <= 0 && inInfo:
+		moveUp = false
+		inInfo = false
+	if $Camera2D.position.y <= -256:
 		moveUp = false
 
 func moveCamDown(delta):
@@ -22,11 +25,14 @@ func moveCamUp(delta):
 	$Camera2D.position.y -= 1 * speed * delta
 
 func _on_button_1_pressed() -> void:
+	moveUp = true
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	
 
 func _on_button_2_pressed() -> void:
 	moveDown = true
+	inInfo = true
 
 
 func _on_button_3_pressed() -> void:
