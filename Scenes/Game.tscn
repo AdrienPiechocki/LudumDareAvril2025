@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://rcupgrgt5vw4"]
+[gd_scene load_steps=12 format=3 uid="uid://rcupgrgt5vw4"]
 
 [ext_resource type="Script" uid="uid://fls2jxgg7laf" path="res://Scripts/GameManager.gd" id="1_2irst"]
 [ext_resource type="PackedScene" uid="uid://6wc4ioattvcx" path="res://Prefabs/ShaderTexture.tscn" id="1_fgofq"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://6gu07klthnv0" path="res://Sprites/RightWall.png" id="2_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bm301snojvb2l" path="res://Prefabs/ShaderWall.tscn" id="3_kldst"]
 [ext_resource type="PackedScene" uid="uid://d6bmt3ndu7y0" path="res://Prefabs/Player.tscn" id="6_7lihs"]
-[ext_resource type="AudioStream" uid="uid://ded6c8ulapxh3" path="res://Audio/Musics/GameSong.wav" id="7_71axn"]
 [ext_resource type="AudioStream" uid="uid://co2v8c5rc4hfu" path="res://Audio/CoinCut.wav" id="8_71axn"]
 [ext_resource type="FontFile" uid="uid://csv540bsiu83e" path="res://Fonts/Daydream.ttf" id="9_bf53h"]
 
@@ -50,13 +49,15 @@ iYSize = 272
 anchor_mode = 0
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_71axn")
 autoplay = true
 
 [node name="CoinHit" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(71, -89)
 stream = ExtResource("8_71axn")
 volume_db = 6.0
+pitch_scale = 1.1
+attenuation = 0.5
+max_polyphony = 2
 
 [node name="Player" parent="." instance=ExtResource("6_7lihs")]
 position = Vector2(71, -10)

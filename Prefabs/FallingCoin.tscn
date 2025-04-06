@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctv4d2k5bmy6d"]
+[gd_scene load_steps=7 format=3 uid="uid://ctv4d2k5bmy6d"]
 
 [ext_resource type="Script" uid="uid://b2mikf0mlfqub" path="res://Scripts/falling_coin.gd" id="1_oq7qx"]
 [ext_resource type="Texture2D" uid="uid://cp65jl8nkif4w" path="res://Sprites/SmallCoin.png" id="2_18dlw"]
 [ext_resource type="Shader" uid="uid://c5tiwm22ug6ax" path="res://Shaders/Coin.gdshader" id="3_oq7qx"]
+[ext_resource type="AudioStream" uid="uid://co2v8c5rc4hfu" path="res://Audio/CoinCut.wav" id="4_ahj5l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0gcwk"]
 radius = 5.0
@@ -33,3 +34,11 @@ texture = ExtResource("2_18dlw")
 modulate = Color(1, 1, 0.87451, 0.454902)
 material = SubResource("ShaderMaterial_ahj5l")
 texture = ExtResource("2_18dlw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ahj5l")
+volume_db = 6.0
+pitch_scale = 0.2
+autoplay = true
+attenuation = 0.5
+max_polyphony = 2
