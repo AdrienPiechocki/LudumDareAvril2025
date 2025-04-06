@@ -138,7 +138,7 @@ position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_53vlf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket"]
-position = Vector2(0, 8)
+position = Vector2(1, 8)
 shape = SubResource("CircleShape2D_shmu5")
 
 [node name="WallHit" type="AudioStreamPlayer2D" parent="Bucket"]
@@ -150,4 +150,5 @@ volume_db = 6.0
 position = Vector2(0, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket/Area2D"]
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_vxq8l")
