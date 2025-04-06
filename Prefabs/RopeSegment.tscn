@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3xn2583ymqho"]
 
-[ext_resource type="Script" uid="uid://cvxvq78i8qy3b" path="res://Scripts/rope_segment.gd" id="1_qmkpa"]
+[ext_resource type="Script" path="res://Scripts/rope_segment.gd" id="1_qmkpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmkpa"]
 size = Vector2(3, 16)
@@ -22,3 +22,4 @@ position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_qmkpa")
 
 [node name="StartPoint" type="Marker2D" parent="."]
+position = Vector2(-1, 0)

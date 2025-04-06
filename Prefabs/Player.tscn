@@ -74,6 +74,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_shmu5")
 
 [node name="Marker2D1" type="Marker2D" parent="."]
+position = Vector2(-1, 0)
 
 [node name="PinJoint2D1" type="PinJoint2D" parent="."]
 position = Vector2(0, 10)
@@ -131,14 +132,13 @@ script = ExtResource("1_x3d5u")
 joints = [NodePath("../PinJoint2D1"), NodePath("../PinJoint2D2"), NodePath("../PinJoint2D3"), NodePath("../PinJoint2D4"), NodePath("../PinJoint2D5")]
 
 [node name="Marker2D4" type="Marker2D" parent="Bucket"]
-position = Vector2(0, -4)
+position = Vector2(-1, -4)
 
 [node name="BucketSprite" type="AnimatedSprite2D" parent="Bucket"]
-position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_53vlf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket"]
-position = Vector2(1, 8)
+position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_shmu5")
 
 [node name="WallHit" type="AudioStreamPlayer2D" parent="Bucket"]
@@ -150,5 +150,4 @@ volume_db = 6.0
 position = Vector2(0, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket/Area2D"]
-position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_vxq8l")
