@@ -134,6 +134,7 @@ joints = [NodePath("../PinJoint2D1"), NodePath("../PinJoint2D2"), NodePath("../P
 position = Vector2(0, -4)
 
 [node name="BucketSprite" type="AnimatedSprite2D" parent="Bucket"]
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_53vlf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bucket"]
