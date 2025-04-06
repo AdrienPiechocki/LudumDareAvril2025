@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fcepb"]
 shader = ExtResource("1_bqxng")
-shader_parameter/fSpeed = 0.7
+shader_parameter/fSpeed = 0.5
 
 [node name="ShaderTexture" type="Node2D"]
 script = ExtResource("1_3b1rx")
