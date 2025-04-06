@@ -7,8 +7,25 @@ extends RigidBody2D
 var coin = preload("res://Prefabs/FallingCoin.tscn")
 var hitParticlues = preload("res://Prefabs/Particules/BucketHitParticules.tscn")
 
+var _cam : Camera2D
+var _noise : FastNoiseLite
+
+var _vCamBasePosition : Vector2
+var _fShakeTime : float = 0.8
+var  _fShakeAmount : float = 150.0
+var _fScreenShakeDelay : float
+
 var _bHaveCoin : bool = false
 var flag:bool = true
+
+func _ready() -> void:
+	_cam = get_node("../../Camera2D")
+	_noise = FastNoiseLite.new()
+
+func _process(delta: float) -> void:
+	if _fScreenShakeDelay > 0 :
+		_cam.global_position = _vCamBasePosition + Vector2(GetNoise(0), GetNoise(1))
+		_fScreenShakeDelay -= float(delta)
 
 func _physics_process(delta: float) -> void:
 	var aBodies : Array[Node2D] = get_colliding_bodies()
@@ -18,7 +35,7 @@ func _physics_process(delta: float) -> void:
 			if bodyNode2D.is_in_group("Obstacles") && flag:
 				cooldown()
 				$WallHit.play()
-				
+				ScreenShake()
 				var contact_point : Vector2 = (to_local(global_position) + to_local(bodyNode2D.global_position)) / 2
 				var hitParticluesInstance : CPUParticles2D = hitParticlues.instantiate()
 				hitParticluesInstance.position = contact_point
@@ -77,3 +94,11 @@ func losingCoin():
 	add_child(coinInstance)
 	coins -= 1
 	_bHaveCoin = coins <= 0
+
+func ScreenShake() -> void :
+	_vCamBasePosition = _cam.global_position
+	_fScreenShakeDelay = _fShakeTime
+	
+func GetNoise(iSeed : int) -> float :
+	_noise.seed = iSeed
+	return _noise.get_noise_1d(randf() * _fScreenShakeDelay) * _fShakeAmount
