@@ -11,6 +11,14 @@ func _ready() -> void:
 	spawnRock()
 	spawnBat()
 
+func _process(delta: float) -> void:
+	$HBoxContainer/Label.text = "Coins: " + str($Player/Bucket.coins)
+	if $Player/Bucket.coins == 20:
+		win()
+	
+func win():
+	pass	
+
 func spawnBat():
 	var batInstance = bat.instantiate()
 	batInstance.position = Vector2(rng.randf_range(50, 70), 300)
